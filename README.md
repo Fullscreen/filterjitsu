@@ -1,6 +1,6 @@
 # jquery.filterjitsu.js
 
-[![Build Status](https://travis-ci.org/Fullscreen/filterjitsu.svg?branch=master)](https://travis-ci.org/Fullscreen/filterjitsu)
+  [![Build Status](https://travis-ci.org/Fullscreen/filterjitsu.svg?branch=master)](https://travis-ci.org/Fullscreen/filterjitsu)
 
 [View contributors](https://github.com/Fullscreen/filterjitsu/graphs/contributors)
 
