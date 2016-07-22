@@ -1,5 +1,9 @@
 # jquery.filterjitsu.js
 
+Filterjitsu is a jQuery plugin to filter DOM elements based on search query params in the URL. It filters simply by data attributes, making few assumptions on the structure of your DOM.
+
+There are many ways to filter data on the backend before serving it to the client. Filterjitsu is specifically meant to be used on cached HTML pages served from a CDN, relieving filtering from the backend and allowing for fast page loads.
+
 [![Build Status](https://travis-ci.org/Fullscreen/filterjitsu.svg?branch=master)](https://travis-ci.org/Fullscreen/filterjitsu)
 
 [View contributors](https://github.com/Fullscreen/filterjitsu/graphs/contributors)
