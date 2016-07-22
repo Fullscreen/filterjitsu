@@ -5,6 +5,10 @@
 [View contributors](https://github.com/Fullscreen/filterjitsu/graphs/contributors)
 
 ## Demo
+[https://fullscreen.github.io/filterjitsu/](https://fullscreen.github.io/filterjitsu/)
+
+or
+
 ```shell
  $ python -m SimpleHTTPServer 3000
 ```
