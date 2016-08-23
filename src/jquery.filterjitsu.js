@@ -18,13 +18,24 @@
    * @return {Array} list of strings of search queries
    */
   function searchQueries () {
-    var searchParams = decodeURIComponent(window.location.search).replace('?', '').split('&'),
+    var encodedSearchParams,
+        decodedSearchParams,
         currParam,
         filterSearchParams,
         i;
 
-    for (i = 0; i < searchParams.length; i++) {
-      currParam = searchParams[i];
+    // URL parameters for filterjitsu are encoded. Split the search query
+    // parameters on `&` to split out the parts of the search query
+    encodedSearchParams = window.location.search.replace('?', '').split('&');
+
+    // Decode each part of the search query
+    decodedSearchParams = encodedSearchParams.map(function (encodedParam) {
+      return decodeURIComponent(encodedParam);
+    });
+
+    // Iterate through the decoded parts and only keep the part that was intended for filterjitsu
+    for (i = 0; i < decodedSearchParams.length; i++) {
+      currParam = decodedSearchParams[i];
 
       if (currParam.slice(0, 7) === 'filter=') {
         filterSearchParams = currParam.replace('filter=', '').split(',');
@@ -66,7 +77,7 @@
 
     for (key in params) {
       if (params.hasOwnProperty(key) && params[key]) {
-        selectorsArr.push(settings.DATA_FILTERABLE + '[data-' + key + '][data-' + key + '!=' + params[key] + ']');
+        selectorsArr.push(settings.DATA_FILTERABLE + '[data-' + key + '][data-' + key + '!="' + params[key] + '"]');
       }
     }
 
