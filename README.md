@@ -27,7 +27,7 @@ initialized. The `DATA_FILTERABLE` selector is required on each item that can be
 that reason it is the best jQuery selector to initialize the plugin with (but this is up to you).
 The filterable items are filtered based on key value pairs provided in the search query parameters of
 the url that match data attributes on the filterable elements. For example, a URL with the search
-query `?type=video&genre=comedy` would filter all elements that did not have the `data-type="video"`
+query `?filter=type==video,genre==comedy` would filter all elements that did not have the `data-type="video"`
 or `data-genre="comedy"` data attributes. It is important to note that the url parameters form a
 boolean OR when filtering out filterable elements.
 
@@ -44,8 +44,8 @@ Below is an example of how filterjitsu could be structured in HTML and initializ
 ```html
   <!-- links to change url and cause filtering -->
   <a href="/">Clear filters</a>
-  <a href="?type=Water">Water Items</a>
-  <a href="?type=Land">Land Items</a>
+  <a href="?filter=type==Water">Water Items</a>
+  <a href="?filter=type==Land">Land Items</a>
   <a href="?">All</a>
   <!-- items to be filtered -->
   <div data-alert="item"></div>
