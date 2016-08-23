@@ -6,7 +6,7 @@ describe('jquery.filterjitsu.js single param test suite', function () {
   var $fj;
 
   beforeEach(function () {
-    loadFixtures('template.html');
+    loadFixtures('template-single-param.html');
 
     // HACK (marcus): the following line of code is needed to mock search query params with phantom js
     // http://stackoverflow.com/questions/2494213/changing-window-location-without-triggering-refresh
