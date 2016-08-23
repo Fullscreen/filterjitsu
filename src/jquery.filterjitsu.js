@@ -18,7 +18,7 @@
    * @return {Array} list of strings of search queries
    */
   function searchQueries () {
-    var searchParams = window.location.search.replace('?', '').split('&'),
+    var searchParams = decodeURIComponent(window.location.search).replace('?', '').split('&'),
         currParam,
         filterSearchParams,
         i;
