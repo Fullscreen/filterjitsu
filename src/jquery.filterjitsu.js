@@ -18,7 +18,21 @@
    * @return {Array} list of strings of search queries
    */
   function searchQueries () {
-    return window.location.search.replace('?', '').split('&');
+    var searchParams = window.location.search.replace('?', '').split('&'),
+        currParam,
+        filterSearchParams,
+        i;
+
+    for (i = 0; i < searchParams.length; i++) {
+      currParam = searchParams[i];
+
+      if (currParam.slice(0, 7) === 'filter=') {
+        filterSearchParams = currParam.replace('filter=', '').split(',');
+        break;
+      }
+    }
+
+    return filterSearchParams;
   }
 
   /**
@@ -29,7 +43,7 @@
     var results = {};
 
     $.each(searchQueries(), function (_index, query) {
-      var splitQuery = query.split('=');
+      var splitQuery = query.split('==');
 
       if (splitQuery.length === 2) {
         results[splitQuery[0]] = splitQuery[1];
