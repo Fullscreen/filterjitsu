@@ -27,9 +27,10 @@ initialized. The `DATA_FILTERABLE` selector is required on each item that can be
 that reason it is the best jQuery selector to initialize the plugin with (but this is up to you).
 The filterable items are filtered based on key value pairs provided in the search query parameters of
 the url that match data attributes on the filterable elements. For example, a URL with the search
-query `?filter=type%3D%3Dvideo,genre%3D%3Dcomedy` would filter all elements that did not have the `data-type="video"`
-or `data-genre="comedy"` data attributes. The URL uses `%3D%3D` rather than `==` in the URL because
-`=` is a [reserved character](https://en.wikipedia.org/wiki/Percent-encoding#Types_of_URI_characters) in URLs.
+query `?filter=type%3D%3Dvideo%2Cgenre%3D%3Dcomedy` would filter all elements that did not have the `data-type="video"`
+or `data-genre="comedy"` data attributes. The URL uses `%3D%3D` rather than `==` and `%2C` rather than `,`
+in the URL because `=` and `,` are
+[reserved characters](https://en.wikipedia.org/wiki/Percent-encoding#Types_of_URI_characters) in URLs.
 It is important to note that the url parameters form a boolean OR when filtering out filterable elements.
 
 The `data-count` attribute can be applied to any elment and will be updated with the current number
