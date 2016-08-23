@@ -2,7 +2,7 @@
 
 jasmine.getFixtures().fixturesPath = "base/test/fixtures";
 
-describe('jquery.filterjitsu.spec.js test suite', function () {
+describe('jquery.filterjitsu.js single param test suite', function () {
   var $fj;
 
   beforeEach(function () {
