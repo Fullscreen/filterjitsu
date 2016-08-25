@@ -21,7 +21,7 @@
     var encodedSearchParams,
         decodedSearchParams,
         currParam,
-        filterSearchParams,
+        filterSearchParams = [],
         i;
 
     // URL parameters for filterjitsu are encoded. Split the search query
@@ -43,7 +43,7 @@
       }
     }
 
-    return filterSearchParams;
+    return filterSearchParams || [];
   }
 
   /**
