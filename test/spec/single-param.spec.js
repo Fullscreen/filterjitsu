@@ -10,7 +10,7 @@ describe('jquery.filterjitsu.js single param test suite', function () {
 
     // HACK (marcus): the following line of code is needed to mock search query params with phantom js
     // http://stackoverflow.com/questions/2494213/changing-window-location-without-triggering-refresh
-    window.history.replaceState( {}, '', 'http://localhost:8080/context.html?filter=type%3D%3DWater');
+    window.history.replaceState( {}, '', 'http://localhost:8080/context.html?filter-type=Water');
 
     $fj = $.fn.filterjitsu();
   });

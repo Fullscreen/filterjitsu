@@ -10,7 +10,7 @@ describe('jquery.filterjitsu.js multiple search params and reserved url characte
 
     // HACK (marcus): the following line of code is needed to mock search query params with phantom js
     // http://stackoverflow.com/questions/2494213/changing-window-location-without-triggering-refresh
-    window.history.replaceState( {}, '', 'http://localhost:8080/context.html?filter=genre%3D%3Drock%26roll%2Cyear%3D%3D2007&sort=alphabetical');
+    window.history.replaceState( {}, '', 'http://localhost:8080/context.html?filter-genre=rock%26roll&filter-year=2007&sort=alphabetical');
 
     $fj = $.fn.filterjitsu();
   });
