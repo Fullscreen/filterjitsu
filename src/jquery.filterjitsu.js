@@ -20,8 +20,8 @@
   function searchQueries () {
     var encodedSearchParams,
         decodedSearchParams,
-        currParam,
-        filterSearchParams = [],
+        filteredSearchParams,
+        searchParams,
         i;
 
     // URL parameters for filterjitsu are encoded. Split the search query
@@ -33,17 +33,17 @@
       return decodeURIComponent(encodedParam);
     });
 
-    // Iterate through the decoded parts and only keep the part that was intended for filterjitsu
-    for (i = 0; i < decodedSearchParams.length; i++) {
-      currParam = decodedSearchParams[i];
+    // filter out key value pairs that are not intended for filterjitsu
+    filteredSearchParams = decodedSearchParams.filter(function (param) {
+      return param.slice(0, 7) !== 'filter';
+    });
 
-      if (currParam.slice(0, 7) === 'filter=') {
-        filterSearchParams = currParam.replace('filter=', '').split(',');
-        break;
-      }
-    }
+    // remove the `filter-` from each key
+    searchParams = filteredSearchParams.map(function (param) {
+      return param.slice(7);
+    });
 
-    return filterSearchParams || [];
+    return searchParams || [];
   }
 
   /**
@@ -54,7 +54,7 @@
     var results = {};
 
     $.each(searchQueries(), function (_index, query) {
-      var splitQuery = query.split('==');
+      var splitQuery = query.split('=');
 
       if (splitQuery.length === 2) {
         results[splitQuery[0]] = splitQuery[1];
