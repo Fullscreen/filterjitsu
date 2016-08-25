@@ -25,7 +25,32 @@
    * @return {Array} list of strings of search queries
    */
   function searchQueries () {
-    return window.location.search.replace('?', '').split('&');
+    var encodedSearchParams,
+        decodedSearchParams,
+        filteredSearchParams,
+        searchParams,
+        i;
+
+    // URL parameters for filterjitsu are encoded. Split the search query
+    // parameters on `&` to split out the parts of the search query
+    encodedSearchParams = window.location.search.replace('?', '').split('&');
+
+    // Decode each part of the search query
+    decodedSearchParams = encodedSearchParams.map(function (encodedParam) {
+      return decodeURIComponent(encodedParam);
+    });
+
+    // filter out key value pairs that are not intended for filterjitsu
+    filteredSearchParams = decodedSearchParams.filter(function (param) {
+      return param.slice(0, 7) !== 'filter';
+    });
+
+    // remove the `filter-` from each key
+    searchParams = filteredSearchParams.map(function (param) {
+      return param.slice(7);
+    });
+
+    return searchParams || [];
   }
 
   /**
@@ -59,7 +84,7 @@
 
     for (key in params) {
       if (params.hasOwnProperty(key) && params[key]) {
-        selectorsArr.push(settings.DATA_FILTERABLE + '[data-' + key + '][data-' + key + '!=' + params[key] + ']');
+        selectorsArr.push(settings.DATA_FILTERABLE + '[data-' + key + '][data-' + key + '!="' + params[key] + '"]');
       }
     }
 
