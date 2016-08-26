@@ -27,9 +27,21 @@ initialized. The `DATA_FILTERABLE` selector is required on each item that can be
 that reason it is the best jQuery selector to initialize the plugin with (but this is up to you).
 The filterable items are filtered based on key value pairs provided in the search query parameters of
 the url that match data attributes on the filterable elements. For example, a URL with the search
-query `?type=video&genre=comedy` would filter all elements that did not have the `data-type="video"`
-or `data-genre="comedy"` data attributes. It is important to note that the url parameters form a
-boolean OR when filtering out filterable elements.
+query `?filter-type=video&filter-genre=comedy` would filter all elements that did not have the
+`data-type="video"` or `data-genre="comedy"` data attributes. It is important to note that the url
+parameters form a boolean OR when filtering out filterable elements.
+
+Filterjitsu expects encoded URLs. Encoding can be done using a language library such as those suggested in
+[this stackoverflow post](http://stackoverflow.com/questions/2834034/how-do-i-raw-url-encode-decode-in-javascript-and-ruby-to-get-the-same-values-in/2834053#2834053).
+This is done to percent encode [reserved characters](https://en.wikipedia.org/wiki/Percent-encoding#Types_of_URI_characters) in URLs.
+The unencoded URL format would look as follows:
+```
+?filter-type=music&filter-genre=rock&roll
+```
+and after properly encoding it changes to:
+```
+?filter-type=video&filter-genre=rock%26roll
+```
 
 The `data-count` attribute can be applied to any elment and will be updated with the current number
 of elements displayed on the page after the main list of filterable elements ahve been filtered.
@@ -44,8 +56,8 @@ Below is an example of how filterjitsu could be structured in HTML and initializ
 ```html
   <!-- links to change url and cause filtering -->
   <a href="/">Clear filters</a>
-  <a href="?type=Water">Water Items</a>
-  <a href="?type=Land">Land Items</a>
+  <a href="?filter-type=Water">Water Items</a>
+  <a href="?filter-type=Land">Land Items</a>
   <a href="?">All</a>
   <!-- items to be filtered -->
   <div data-alert="item"></div>
