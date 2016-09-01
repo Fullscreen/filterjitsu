@@ -35,7 +35,7 @@
 
     // filter out key value pairs that are not intended for filterjitsu
     filteredSearchParams = decodedSearchParams.filter(function (param) {
-      return param.slice(0, 7) !== 'filter';
+      return param.slice(0, 6) === 'filter';
     });
 
     // remove the `filter-` from each key
