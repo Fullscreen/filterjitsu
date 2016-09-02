@@ -16,7 +16,7 @@ or
 ```shell
  $ python -m SimpleHTTPServer 3000
 ```
-Navigate to [http://localhost:3000](http://localhost:3000)
+Navigate to [http://localhost:3000/docs](http://localhost:3000/docs)
 
 ## How to use
 The filterjitsu plugin is initialized by being called off of jQuery.fn (or $.fn). The plugin
@@ -108,7 +108,7 @@ install the devDependencies.
  ... edit jquery.filterjitsu.js
  ... look in terminal for gulp output as you save
  $ python -m SimpleHTTPServer 3000
- ... test in [browser](http://localhost:3000)
+ ... test in [browser](http://localhost:3000/docs)
 ```
 
 ## Testing with Karma + Jasmine-jQuery
