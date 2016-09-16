@@ -126,6 +126,6 @@ Execute the tests using gulp.
 ```
 
 ## Versioning
-Versions will follow the [semvar](http://semver.org/) format. All versions will be visible under
+Versions will follow the [semver](http://semver.org/) format. All versions will be visible under
 [releases](https://github.com/Fullscreen/filterjitsu/releases) with an
 [updated changelog](https://github.com/Fullscreen/filterjitsu/blob/master/CHANGELOG.md).
