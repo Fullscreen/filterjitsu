@@ -28,8 +28,8 @@ that reason it is the best jQuery selector to initialize the plugin with (but th
 The filterable items are filtered based on key value pairs provided in the search query parameters of
 the url that match data attributes on the filterable elements. For example, a URL with the search
 query `?filter-type=video&filter-genre=comedy` would filter all elements that did not have the
-`data-type="video"` or `data-genre="comedy"` data attributes. It is important to note that the url
-parameters form a boolean OR when filtering out filterable elements.
+`data-filter-type="video"` or `data-filter-genre="comedy"` data attributes. It is important to note
+that the url parameters form a boolean OR when filtering out filterable elements.
 
 Filterjitsu expects encoded URLs. Encoding can be done using a language library such as those suggested in
 [this stackoverflow post](http://stackoverflow.com/questions/2834034/how-do-i-raw-url-encode-decode-in-javascript-and-ruby-to-get-the-same-values-in/2834053#2834053).
@@ -63,12 +63,12 @@ Below is an example of how filterjitsu could be structured in HTML and initializ
   <div data-alert="item"></div>
   <div data-count="item"></div>
   <div>
-    <div data-filterable data-type="Water">Surfboard</div>
-    <div data-filterable data-type="Land">Skateboard</div>
-    <div data-filterable data-type="Water">Skimboard</div>
-    <div data-filterable data-type="Water">Paddleboard</div>
-    <div data-filterable data-type="Land">Rollerblades</div>
-    <div data-filterable data-type="Land">BMX Bike</div>
+    <div data-filterable data-filter-type="Water">Surfboard</div>
+    <div data-filterable data-filter-type="Land">Skateboard</div>
+    <div data-filterable data-filter-type="Water">Skimboard</div>
+    <div data-filterable data-filter-type="Water">Paddleboard</div>
+    <div data-filterable data-filter-type="Land">Rollerblades</div>
+    <div data-filterable data-filter-type="Land">BMX Bike</div>
   </div>
   <!-- filterjitsu plugin -->
   <script>
