@@ -20,9 +20,7 @@
   function searchQueries () {
     var encodedSearchParams,
         decodedSearchParams,
-        filteredSearchParams,
-        searchParams,
-        i;
+        filteredSearchParams;
 
     // URL parameters for filterjitsu are encoded. Split the search query
     // parameters on `&` to split out the parts of the search query
@@ -38,12 +36,7 @@
       return param.slice(0, 6) === 'filter';
     });
 
-    // remove the `filter-` from each key
-    searchParams = filteredSearchParams.map(function (param) {
-      return param.slice(7);
-    });
-
-    return searchParams || [];
+    return filteredSearchParams || [];
   }
 
   /**
