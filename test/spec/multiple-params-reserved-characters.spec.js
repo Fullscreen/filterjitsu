@@ -20,15 +20,15 @@ describe('jquery.filterjitsu.js multiple search params and reserved url characte
   });
 
   it('should show genre rock&roll items', function () {
-    expect($('[data-filterable][data-genre="rock&roll"]')).toBeVisible();
+    expect($('[data-filterable][data-filter-genre="rock&roll"]')).toBeVisible();
   });
 
   it('should show year 2007 items', function () {
-    expect($('[data-filterable][data-year="2007"]')).toBeVisible();
+    expect($('[data-filterable][data-filter-year="2007"]')).toBeVisible();
   });
 
   it('should hide land all other drama and year items', function () {
-    expect($('[data-filterable][data-genre!="rock&roll"], [data-filterable][data-year!="2007"]')).toBeHidden();
+    expect($('[data-filterable][data-filter-genre!="rock&roll"], [data-filterable][data-filter-year!="2007"]')).toBeHidden();
   });
 
   it('should show an alert', function () {

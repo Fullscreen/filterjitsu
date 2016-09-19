@@ -20,11 +20,11 @@ describe('jquery.filterjitsu.js single param test suite', function () {
   });
 
   it('should show water items', function () {
-    expect($('[data-filterable][data-type="Water"]')).toBeVisible();
+    expect($('[data-filterable][data-filter-type="Water"]')).toBeVisible();
   });
 
   it('should hide land items', function () {
-    expect($('[data-filterable][data-type!="Water"]')).toBeHidden();
+    expect($('[data-filterable][data-filter-type!="Water"]')).toBeHidden();
   });
 
   it('should show an alert', function () {
