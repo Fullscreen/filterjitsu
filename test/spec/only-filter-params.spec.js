@@ -20,6 +20,6 @@ describe('jquery.filterjitsu.js not filterjitsu search query test suite', functi
   });
 
   it('should not hide [data-type="Land"] items ', function () {
-    expect($('[data-filterable][data-type="Land"]')).toBeVisible();
+    expect($('[data-filterable][data-filter-type="Land"]')).toBeVisible();
   });
 });

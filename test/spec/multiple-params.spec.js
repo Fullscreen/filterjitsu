@@ -20,15 +20,15 @@ describe('jquery.filterjitsu.js multiple search params test suite', function () 
   });
 
   it('should show genre comedy items', function () {
-    expect($('[data-filterable][data-genre="comedy"]')).toBeVisible();
+    expect($('[data-filterable][data-filter-genre="comedy"]')).toBeVisible();
   });
 
   it('should show year 2007 items', function () {
-    expect($('[data-filterable][data-year="2007"]')).toBeVisible();
+    expect($('[data-filterable][data-filter-year="2007"]')).toBeVisible();
   });
 
   it('should hide land all other drama and year items', function () {
-    expect($('[data-filterable][data-genre!="comedy"], [data-filterable][data-year!="2007"]')).toBeHidden();
+    expect($('[data-filterable][data-filter-genre!="comedy"], [data-filterable][data-filter-year!="2007"]')).toBeHidden();
   });
 
   it('should show an alert', function () {
