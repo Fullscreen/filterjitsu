@@ -1,6 +1,6 @@
 /**
  * filterjitsu - jQuery plugin to filter page elements based on url search parameters
- * @version v1.0.0
+ * @version v2.0.0
  * @link https://github.com/Fullscreen/filterjitsu#readme
  * @license MIT
  */
